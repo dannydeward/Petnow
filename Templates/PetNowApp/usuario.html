@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<div align="center"><img class="img.alineadoTextoImagenCentro" 
+  src="{% static 'img/about/banda.png' %}"  width="25%"> 
+</div>
+<div align="center">
+<p> Regístrate como usuario para disfrutar de las ventajas de comprar, reservar en nuestra red se socios especializados en productos para mascotas.</p>
+<p> Adicional a la comodidad de saber que podras hacer tus pedidos desde cualquier lugar y luego pasar a retirar o recibirlos en tu casa, tambine recibiras en tu mail las ofertas del mes</p>
+</div>
+<Hr>
+<center><B>REGISTRATE AQUI</B></center>
+<br>
+  <form method="post" class="registro-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.usuario.id_for_label }}">Nombre de usuario:</label>
+        {{ form.usuario }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.clave.id_for_label }}">Contraseña:</label>
+        {{ form.clave }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.repita_clave.id_for_label }}">Repita Contraseña:</label>
+        {{ form.repita_clave }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.repita_email.id_for_label }}">Repita Correo electrónico:</label>
+        {{ form.repita_email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.direccion.id_for_label }}">Dirección:</label>
+        {{ form.direccion }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.telefono.id_for_label }}">Teléfono:</label>
+        {{ form.telefono }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.mascota.id_for_label }}">Tipo de mascota:</label>
+        {{ form.mascota }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.provincia.id_for_label }}">Provincia:</label>
+        {{ form.provincia }}
+    </div>
+    <br>
+    <button type="submit">Registrarse</button>
+</form>
+<div align="center"><img class="img.alineadoTextoImagenCentro" 
+  src="{% static 'img/about/cisne.jpg' %}"  width="45%"> 
+</div>
+
+<!--<div  class="registro-input registro_form"  style="text-size-adjust:14px; ;">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrarse</button>
+  </form>
+</div>-->
+
+
+<style>
+
+/*
+.registro-input {
+  margin-bottom: 10px;
+  width: 100%; /* Ancho del campo de entrada al 100% 
+  
+}*/
+
+/*
+.registro_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 300px; /* Ancho máximo del grupo de etiqueta y campo */
+}
+
+.form-group label {
+  flex-basis: 150px; /* Ancho de la etiqueta */
+  margin-right: 10px; /* Espaciado entre etiquetas y campos de entrada */
+}
+
+.form-group input, 
+.form-group select {
+  flex: 1; /* Los campos de entrada ocupan el espacio restante */
+  padding: 5px;
+}
+
+</style>
+{% endblock %}

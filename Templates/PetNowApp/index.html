@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div>
+<img class="img.alineadoTextoImagenCentro"
+     src="{% static 'img/banner/dog.png' %}"  width="25%">Bienvenido al Lugar donde encontraras todo para tu mascota
+</div>
+
+<center><form method="post" enctype="multipart/form-data" autocomplete="off">
+    <p>
+        <label class="searchFields">
+            Search:
+
+            <input type="text" name="search" value="{{ request.POST.search }}" class="searchJobsInput" />
+    </label>
+
+        <button type="submit" name="action" value="search">
+            Search
+        </button>
+
+        <button type="submit" name="action" value="reset">
+            Reset
+        </button>
+    </p>
+
+    <p class="search Location">
+        <label>
+            <span class="searchLabel">
+                Filtrar:
+            </span>
+
+            <select name="Filtrar" size="1" class="searchJobsSelect">
+                                                                    <option value="">
+                            Petshops
+                        </option>
+                                                                                            <option value="">
+                            Venterinarios
+                        </option>
+
+                             Veterinarios 24 horas
+                        </option>
+                                                                                            <option selected="selected" value="">
+                            Paseadores
+                        </option>
+                                                                                           <option value="">
+                            Hoteles
+                        </option>
+                                                                                            <option value="">
+                            Mayoristas
+                        </option>
+                                                                                            <option value="">
+                            Tiendas 24 horas
+                        </option>
+                                                                                            <option value="">
+                            Organizadores de Fiestas
+                        </option>
+                             Cuidadores
+                        </option>
+                                                                                            <option value="">
+                          
+                                                        </select>
+        </label>
+    </p>
+
+</form></center>
+
+{% if resultados %}
+    <h2>Resultados de búsqueda:</h2>
+    <ul>
+    {% for resultado in resultados %}
+        <li>{{ resultado.categoria }} - {{ resultado.direccion }}-{{ resultado.nombre_comercial }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<center><p>Registrate y descubre todo lo que tenemos para ti</center>
+        
+<div align="center"><img class="img.alineadoTextoImagenCentro" 
+     src="{% static 'img/about/perro_gato.png' %}"  width="35%">
+     
+    
+    </div>
+    <div align="center">
+        <p>
+            Selecciona como quieres registrarte como <a href="/usuario">Usuario</a> / <a href="/prestador">Prestador de Servicios</a>
+        </p>
+    </div>
+{% endblock %}
+

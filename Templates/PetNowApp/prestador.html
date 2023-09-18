@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+ <br>
+ <br>
+ <div align="center"><img class="img.alineadoTextoImagenCentro" 
+  src="{% static 'img/about/lagarto.jpg' %}"  width="15%"> <p>Aqui encontraras la oportunidad de ampliar tu clientela, mejorar tus ventas y dar a conocer tu marca, podras recibir pedidos, compras, hacer reservas entre otras</p>
+     <p>si eres un usuario puedes registrate aqui <a href="/usuario">Usuario</a></p>
+</div>
+<BR>
+<center><B>REGISTRATE AQUI</B></center>
+
+  
+   
+  </p>
+</div>
+
+<form method="post" class="registro-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.usuario.id_for_label }}">Nombre de usuario:</label>
+        {{ form.usuario }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.nombre_comercial.id_for_label }}">Nombre Comercial:</label>
+        {{ form.nombre_comercial }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.clave.id_for_label }}">Contraseña:</label>
+        {{ form.clave }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.repita_clave.id_for_label }}">Repita Contraseña:</label>
+        {{ form.repita_clave }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.repita_email.id_for_label }}">Repita Correo electrónico:</label>
+        {{ form.repita_email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.direccion.id_for_label }}">Dirección:</label>
+        {{ form.direccion }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.telefono.id_for_label }}">Teléfono:</label>
+        {{ form.telefono }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.categoria.id_for_label }}">Categoría:</label>
+        {{ form.categoria }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.provincia.id_for_label }}">Provincia:</label>
+      {{ form.provincia }}
+  </div>
+  <br>
+    <button type="submit">Registrarse</button>
+</form>
+
+<style>
+  .registro-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 300px; /* Ancho máximo del grupo de etiqueta y campo */
+}
+
+.form-group label {
+  flex-basis: 150px; /* Ancho de la etiqueta */
+  margin-right: 10px; /* Espaciado entre etiquetas y campos de entrada */
+}
+
+.form-group input, 
+.form-group select {
+  flex: 1; /* Los campos de entrada ocupan el espacio restante */
+  padding: 5px;
+}
+</style>
+ <!--<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrarse</button>
+  </form>-->
+  <div align="center"><img class="img.alineadoTextoImagenCentro" 
+    src="{% static 'img/about/pez.jpg' %}"  width="15%"> 
+    <img class="img.alineadoTextoImagenCentro"  src="{% static 'img/about/pez2.png' %}" width="15%"> 
+    <img class="img.alineadoTextoImagenCentro"  src="{% static 'img/about/serpiente.png' %}" width="15%">
+  </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<center><div><h1>Contacto</h1>
+
+    <div align="center"><img class="img.alineadoTextoImagenCentro" 
+        src="{% static 'img/about/mouse .jpg' %}"  width="15%"> 
+    </div>
+    <br>
+<p> Puedes escribirnos aqui cualquier duda que tengas</p>
+</div></center>
+<br>
+
+<center><form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+        {{ form.nombre }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Asunto:</label>
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.mensaje.id_for_label }}">Mensaje:</label>
+        {{ form.mensaje }}
+    </div>
+    <button type="submit">Enviar</button>
+</form></center>
+
+<div align="center"><img class="img.alineadoTextoImagenCentro" 
+    <img class="img.alineadoTextoImagenCentro"  src="{% static 'img/about/catnew.jpg' %}"  width="15%"> 
+    <img class="img.alineadoTextoImagenCentro"  src="{% static 'img/about/dogblack.png' %}"  width="15%"> 
+  </div>
+
+<style>
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+</style>
+{% endblock %}
