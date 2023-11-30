@@ -21,30 +21,37 @@
     {% csrf_token %}
     <div class="form-group">
         <label for="{{ form.usuario.id_for_label }}">Nombre de usuario:</label>
-        {{ form.usuario }}
-    </div>
+      <!--  <input type="text" name="nombre usuario" required>-->
+      {{ form.usuario }}
+           </div>
     <div class="form-group">
         <label for="{{ form.nombre_comercial.id_for_label }}">Nombre Comercial:</label>
-        {{ form.nombre_comercial }}
+       <!-- <input type="text" name="nombre Comercial" required>-->
+       {{ form.nombre_comercial }}
     </div>
     <div class="form-group">
         <label for="{{ form.clave.id_for_label }}">Contraseña:</label>
-        {{ form.clave }}
+       <!-- <input type="text" name="contraseña" required>-->
+       {{ form.clave }}
     </div>
     <div class="form-group">
         <label for="{{ form.repita_clave.id_for_label }}">Repita Contraseña:</label>
-        {{ form.repita_clave }}
+       <!-- <input type="text" name="Repita contraseña" required>-->
+       {{ form.repita_clave }}
     </div>
     <div class="form-group">
         <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
+        <!--<input type="text" name="Correro Electronico" required>-->
         {{ form.email }}
     </div>
     <div class="form-group">
         <label for="{{ form.repita_email.id_for_label }}">Repita Correo electrónico:</label>
+        <!--<input type="text" name="Repita Correo Electronico" required>-->
         {{ form.repita_email }}
     </div>
     <div class="form-group">
         <label for="{{ form.direccion.id_for_label }}">Dirección:</label>
+        <!--<input type="text" name="Direccion" required>-->
         {{ form.direccion }}
     </div>
     <div class="form-group">
@@ -63,6 +70,13 @@
     <button type="submit">Registrarse</button>
 </form>
 
+
+
+<!--<form action="/prestador/" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Registrarse</button>
+</form>-->
 <style>
   .registro-form {
   display: flex;
@@ -88,11 +102,7 @@
   padding: 5px;
 }
 </style>
- <!--<form  method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrarse</button>
-  </form>-->
+ 
   <div align="center"><img class="img.alineadoTextoImagenCentro" 
     src="{% static 'img/about/pez.jpg' %}"  width="15%"> 
     <img class="img.alineadoTextoImagenCentro"  src="{% static 'img/about/pez2.png' %}" width="15%"> 

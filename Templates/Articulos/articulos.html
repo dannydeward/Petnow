@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center><p>Seleccione aqui todos los productos y accesorios que vende, si alguno de su lista de productos no figura en el listado, enviarnos un email mostrando los detalles para agregarlo a su pagina de usuario </p></center>
+
+<h2>Marcas de Comida para Perros:</h2>
+<div class="row">
+    {% for elemento in mascota_perros.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_perros" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Marcas de Comida para Gatos:</h2>
+<div class="row">
+    {% for elemento in mascota_gatos.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_gatos" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Marcas de Comida para tortugas:</h2>
+<div class="row">
+    {% for elemento in mascota_tortugas.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_tortugas" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Marcas de Comida para Aves:</h2>
+<div class="row">
+    {% for elemento in mascota_aves.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_aves" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+<h2>Marcas de Comida para Ratones y Hámsters:</h2>
+<div class="row">
+    {% for elemento in mascota_ratones_y_hámsters.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_<div class="row">
+    {% for elemento in mascota_ratones_y_hámsters.elemento_set.all %}
+    <div class="col-md-4">
+        <label>
+            <input type="checkbox" name="marcas_ratones_y_hámsters:" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>s" value="{{ elemento.id }}">
+            {{ elemento.nombre }}
+        </label>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
